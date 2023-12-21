@@ -1,0 +1,185 @@
+button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    text-align: center;
+    border-radius: 12px;
+    line-height: 18px;
+    cursor: pointer;
+}
+
+button.myButton {
+    font-size: 13px;
+    line-height: 20px;
+    border: none;
+}
+
+/* SIZE */
+button.extraSmall {
+    width: 64px;
+    height: 28px;
+    padding: 4px 8px;
+}
+
+button.small {
+    width: 72px;
+    height: 32px;
+    padding: 6px 12px;
+}
+
+button.medium {
+    width: 80px;
+    height: 38px;
+    padding: 10px 12px;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+button.large {
+    /* width: 104px; */
+    height: 50px;
+    padding: 16px 24px;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+/* COLOR */
+
+/* VIOLET */
+
+button.violet {
+    background-color: #835E9F;
+    color: #fff;
+}
+
+button.violet:hover {
+    background-color: #553D67;
+    border: none;
+}
+
+button.violet:focus {
+    background-color: #553D67;
+    outline: none;
+}
+
+button.violet:active {
+    background-color: #3C2B49;
+    border: none;
+}
+
+/* BLUE */
+
+button.blue {
+    background-color: #242582;
+    color: #fff;
+}
+
+button.blue:hover {
+    background-color: #1C1D65;
+    border: none;
+}
+
+button.blue:focus {
+    background-color: #1C1D65;
+    outline: none;
+}
+
+button.blue:active {
+    background-color: #141549;
+    border: none;
+}
+
+/* borderBlue */
+
+button.borderBlue {
+    background-color: rgba(0,0,0,0);
+    color: #242582;
+    border: 2px solid #242582;
+}
+
+button.borderBlue:hover {
+    background-color: rgba(0,0,0,0);
+    color: #1C1D65;
+    border: 2px solid #1C1D65;
+}
+
+button.borderBlue:focus {
+    background-color: rgba(0,0,0,0);
+    color: #1C1D65;
+    border: 2px solid #1C1D65;
+}
+
+button.borderBlue:active {
+    background-color: rgba(0,0,0,0);
+    color: #141549;
+    border: 2px solid #141549;
+}
+
+/* borderGray */
+
+button.borderGray {
+    background-color: rgba(0,0,0,0);
+    color: #B0B0B0;
+    border: 2px solid #B0B0B0;
+}
+
+button.borderGray:hover {
+    background-color: rgba(0,0,0,0);
+    color: #808080;
+    border: 2px solid #808080;
+}
+
+button.borderGray:focus {
+    background-color: rgba(0,0,0,0);
+    color: #808080;
+    border: 2px solid #808080;
+}
+
+button.borderGray:active {
+    background-color: rgba(0,0,0,0);
+    color: #333333;
+    border: 2px solid #333333;
+}
+
+/* emptyBlue */
+
+button.emptyBlue {
+    background-color: rgba(0,0,0,0);
+    color: #242582;
+}
+
+button.emptyBlue:hover {
+    background-color: rgba(0,0,0,0);
+    color: #1C1D65;
+}
+
+button.emptyBlue:focus {
+    background-color: rgba(0,0,0,0);
+    color: #1C1D65;
+}
+
+button.emptyBlue:active {
+    background-color: rgba(0,0,0,0);
+    color: #141549;
+}
+
+/* emptyRed */
+
+button.emptyRed {
+    background-color: rgba(0,0,0,0);
+    color: #F64C72;
+}
+
+button.emptyRed:hover {
+    background-color: rgba(0,0,0,0);
+    color: #9E3149;
+}
+
+button.emptyRed:focus {
+    background-color: rgba(0,0,0,0);
+    color: #9E3149;
+}
+
+button.emptyRed:active {
+    background-color: rgba(0,0,0,0);
+    color: #651F2E;
+}
