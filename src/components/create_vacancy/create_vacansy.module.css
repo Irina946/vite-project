@@ -1,0 +1,82 @@
+
+.containerAll {
+    padding: 170px  70px;
+}
+
+.block {
+    width: 100%;
+    border-bottom: 2px solid #E0E0E0;
+    margin-bottom: 32px;
+}
+
+.blockInside {
+    display: block;
+    text-align: center;
+    width: 1000px;
+
+}
+
+
+
+.textArea {
+    width: 702px;
+    height: 168px; 
+    padding: 16px 24px;
+    margin-bottom: 18px;
+    margin-top: 10px;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+}
+
+.ContainerBtn {
+    margin-right: 0;
+    margin-left: auto;
+}
+
+
+
+.label {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    color: #272727A6;
+    font-weight: 500;
+    size: 17px;
+    line-height: 28px;
+}
+
+.labelPrice {
+    margin-right: 415px;
+}
+
+.myInput {
+    width: 482px;
+    height: 24px;
+    border-radius: 12px;
+    border: 1px solid #E0E0E0;
+    background-color: #F6F6F6;
+    font-weight: 500;
+    size: 15px;
+    line-height: 24px;
+    color: #272727;
+    padding: 16px 24px;
+    margin-bottom: 32px;
+    box-shadow: 0px 4px 12px 0px #0000001A;    
+}
+
+
+.myInput:focus,
+.myInput:hover {
+    border: 1px solid #E0E0E0;
+    background-color: #F6F6F6;
+}
+
+.myInput:active,
+.myInput:focus-visible {
+    background-color: #F6F6F6;
+    border-color: #B0B0B0;
+}
+
+
+
+
