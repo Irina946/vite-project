@@ -1,0 +1,113 @@
+.signupForm{
+    width: 520px;
+    height: auto;
+    background-color: #FFFFFF;
+    border-radius: 23px;
+    margin-bottom: 50px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: flex-start;
+    padding: 40px;
+}
+.signupForm .error-text{
+    display: none;
+}
+
+.signupForm .error p {
+    display: flex;
+    color: #F64C72;
+}
+.submit-error{
+    display: flex;
+    color: #F64C72;
+}
+.signupForm .error{
+    color: #F64C72;
+}
+
+.signupForm .error #signupForm-input-login,
+.signupForm .error #signupForm-input-password,
+.signupForm .error #signupForm-input-secondPassword{
+    border: 2px solid #F64C72;
+    margin-bottom: 0;
+}
+
+.signupForm-label{
+    margin-bottom: 3px;
+}
+
+#signupForm-input-login, #signupForm-input-password, #signupForm-input-secondPassword{
+    width: 420px;
+    height: 56px;
+    border: #E0E0E0 solid 1px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+#signupForm-input-login, #signupForm-input-password, #signupForm-input-secondPassword::-webkit-input-placeholder {
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+}
+
+.signupForm-button{
+    background-color: #242582!important;
+    border: 1px solid #242582;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.role-radio{
+    margin-bottom: 20px;
+}
+
+.customRadio {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.customRadio::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    background-color: #B0B0B0;
+    border-radius: 100%;
+    margin-right: 20px;
+    background-repeat: no-repeat;
+    background-position: 48% 48%;
+    background-size: 52% 52%;
+}
+
+label .small::before {
+    width: 16px;
+    height: 16px;
+}
+
+label .customRadio:checked::before {
+    background-color: #242582;
+    background-image: url(/src/img/radiobutton.svg);
+}
+
+label .customRadio:not(:disabled):active::before {
+    background-color: #141549;
+}
+
+label .customRadio:focus::before {
+    background-color: #1C1D65;
+}
+
+label .customRadio:hover::before {
+    background-color: #1C1D65;
+}
+
+.role-radio-label{
+    margin-right: 30px;
+}
