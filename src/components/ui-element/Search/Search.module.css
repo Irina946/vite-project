@@ -1,0 +1,25 @@
+::placeholder {
+    color: rgba(39, 39, 39, 0.40);
+    font-weight: 500;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+}
+
+.searchForm {
+    width: 858px;
+    margin-bottom: 30px;
+}
+
+.searchForm__input {
+    background-image: url("../../assets/search-sign.svg");
+    background-repeat: no-repeat;
+    background-position: 24px;
+    padding-left: 52px;
+    height: 56px;
+    width: calc(100% - 52px);
+    outline: none;
+    border: 1px solid #E0E0E0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}

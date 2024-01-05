@@ -5,6 +5,7 @@ import { LK } from './components/LK/LK';
 import { Createvacancy } from './components/create_vacancy/create_vacancy';
 import { EditingVacancy } from './components/editing_vacancy/editing_vacancy';
 import { LK_employer } from './components/LK_employer/LK_employer';
+import { Main } from "./components/Main/Main/Main";
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path='/' element={<></>} />
+        <Route path='/' element={<Main/>} />
         <Route path='/lk' element={<LK />} />
         <Route path='/vacancy' element={<></>} /> {/* мои вакансии*/}
         <Route path='/project' element={<></>} /> {/*О проекте */}

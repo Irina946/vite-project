@@ -1,0 +1,8 @@
+.page-turners {
+    padding-inline-start: 0px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 8px;
+    list-style-type: none;
+}
