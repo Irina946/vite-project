@@ -1,4 +1,4 @@
-import {useContext, useEffect, useRef, useState} from "react";
+import React, {useContext, useEffect, useRef, useState} from "react";
 import axios, {AxiosError} from "axios";
 import {saveToken} from "../../token.ts";
 import {Link, useLocation, useNavigate} from "react-router-dom";
@@ -42,7 +42,7 @@ export default function SignupForm() {
     }, [password, PASSWORD_REGEX, secondPassword])
 
 
-    async function submit(e) {
+    const submit = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault()
         if (validPassword && validLogin && checkMatchPass){
             try {
@@ -110,7 +110,7 @@ export default function SignupForm() {
                     <label className="role-radio-label"><input type="radio" id="role-student" name="role" className="customRadio" onChange={() => setRole('student')}/>Я студент</label>
                     <label className="role-radio-label"><input type="radio" id="role-employer" name="role" className="customRadio" onChange={() => setRole('employer')}/>Я работодатель</label>
                 </div>
-                <button className="signupForm-button" onClick={submit}>Зарегестрироваться</button>
+                <button className="signupForm-button" onClick={(e: React.MouseEvent<HTMLButtonElement>) => submit(e)}>Зарегестрироваться</button>
                 <p>У меня уже есть аккаунт, <Link to="/login">Войти</Link></p>
             </form>
         </div>

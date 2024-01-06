@@ -4,6 +4,9 @@ import { Navbar } from './components/ui-element/Navbar/Navbar';
 import { LK } from './components/LK/LK';
 import {authContext} from "./contexts/AuthContext";
 import {FC, useContext} from "react";
+import Signup from "./SignUp/Signup";
+import Login from "./Login/Login";
+
 
 type Props = {
     allowedRoles: string[]
@@ -29,7 +32,11 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<></>} />
-        <Route path='/lk' element={<LK />} />
+          <Route path='/lk' element={<RequireAuth allowedRoles={["student"]}/>}>
+              <Route path='/lk' element={<LK />}/>
+          </Route>
+          <Route path='/signup' element={<Signup />}/> {/*Регистрация*/}
+          <Route path='/login' element={<Login />}/> {/*Вход*/}
         <Route path='/vacancy' element={<></>} /> {/* мои вакансии*/}
         <Route path='/project' element={<></>} /> {/*О проекте */}
       </Routes>
