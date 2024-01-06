@@ -1,0 +1,99 @@
+import vacancies from "../../../temp-data/vacancies.tsx";
+import filterTypes from "../../../temp-data/filters";
+import {Vacancy} from "../../../temp-data/vacancies.tsx";
+import {useState, useEffect} from 'react';
+import { useFilters } from "../../../hooks/useFilters";
+import './Main.css'
+import ReactPaginate from "react-paginate";
+import Search from '../../ui-element/Search/Search.tsx'
+import ArrowButton from "../../ui-element/Arrow-button/Arrow-button.tsx";
+import Modal from "../../ui-element/Modal/Modal.tsx";
+import FilterModal from "../Filter-Modal/Filter-Modal.tsx";
+import SearchFilters from "../Search-Filter/Search-Filters.tsx";
+import VacanciesList from "../Vacancies-List/Vacancies-List.tsx";
+
+export const Main = () => {
+    const post_vacancies = vacancies
+    const filters = filterTypes
+
+    const [searchInput, setSearchInput] = useState('')
+    const [sortFilter, setSortFilter] = useState('base')
+    const [filterType, setFilterType] = useState('base')
+    const [modalVisibility, setModalVisibility] = useState(false)
+    const [restrictions, setRestrictions] = useState([])
+
+    const filteredPosts: Vacancy[] = useFilters(post_vacancies, searchInput, filters, filterType, restrictions)
+
+    const filterVacancies = (values: any[]) => {
+        setRestrictions(values)
+        setFilterType(sortFilter)
+        setModalVisibility(false)
+    }
+
+    //пагинация
+    const itemsPerPage = 3
+
+    const [currentItems, setCurrentItems] = useState([]);
+    const [pageCount, setPageCount] = useState(0)
+    const [itemOffset, setItemOffset] = useState(0);
+
+    useEffect(() => {
+        const endOffset: number = itemOffset + itemsPerPage
+        setCurrentItems(filteredPosts.slice(itemOffset, endOffset))
+        setPageCount(Math.ceil(filteredPosts.length / itemsPerPage))
+    }, [filteredPosts, itemOffset, itemsPerPage])
+
+    const onPageClick = (e) => {
+        const newOffset: number = (e.selected * itemsPerPage) % filteredPosts.length
+        setItemOffset(newOffset)
+    }
+
+    return (
+        <div className="main">
+            {sortFilter !== 'base' ? (
+                <Modal visible={modalVisibility} setVisible={setModalVisibility}>
+                    <FilterModal filter={filters.filter(filt => filt.value === sortFilter)[0]}
+                                 vacancies={post_vacancies}
+                                 filterVacancies={filterVacancies}/>
+                </Modal>
+            ) : null}
+
+            <Search
+                placeholder={'Поиск по позиции или компании'}
+                value={searchInput}
+                onEnter={e => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault()
+                        setSearchInput(e.target.value)
+                    }
+                }}
+            />
+            <SearchFilters
+                filters={filters}
+                onClick={(filter) => {
+                    if (filter === 'base') {
+                        setSearchInput('')
+                        setFilterType('base')
+                    }
+                    setSortFilter(filter)
+                    setModalVisibility(true)
+                }}
+            />
+            <div className='main__content'>
+                <VacanciesList post_vacancies={currentItems} />
+            </div>
+            <ReactPaginate
+                pageCount={pageCount}
+                previousLabel={<ArrowButton isLeft={true}/>}
+                nextLabel={<ArrowButton isLeft={false} />}
+                previousClassName="page-turners"
+                nextClassName="page-turners"
+                onPageChange={onPageClick}
+                pageLinkClassName="page-link"
+                activeClassName="active"
+                containerClassName="links"
+            />
+        </div>
+    );
+};
+

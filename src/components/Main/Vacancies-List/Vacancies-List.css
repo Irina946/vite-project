@@ -1,0 +1,8 @@
+.vacancies {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: center;
+    width: 858px;
+    gap: 14px;
+}

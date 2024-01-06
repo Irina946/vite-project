@@ -1,0 +1,82 @@
+.customCheckbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.customCheckbox+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    color: #272727A6;
+}
+
+.customCheckbox+label::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: none;
+    border-radius: 7px;
+    background-color: #B0B0B0;
+    margin-right: 16px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+
+/*color blue */
+.customCheckbox:checked+label::before {
+    background-color: #242582;
+    background-image: url(/src/img/checkbox.svg);
+}
+
+.customCheckbox:not(:disabled):active+label::before {
+    background-color: #141549;
+}
+
+.customCheckbox:focus+label::before {
+    background-color: #1C1D65;
+}
+
+.customCheckbox:hover+label::before {
+    background-color: #1C1D65;
+}
+
+/* color violet */
+
+.violet:checked+label::before {
+    background-color: #835E9F;
+    background-image: url(/src/img/checkbox.svg);
+}
+
+.violet:not(:disabled):active+label::before {
+    background-color: #3C2B49;
+}
+
+.violet:focus+label::before {
+    background-color: #553D67;
+}
+
+.violet:hover+label::before {
+    background-color: #553D67;
+}
+
+/* checkbox not checked */
+
+
+.customCheckbox:not(:disabled):not(:checked)+label:hover::before {
+    background-color: #959595;
+}
+
+.customCheckbox:not(:disabled):not(:checked)+label:active::before {
+    background-color: #808080;
+}
+
+
+.customCheckbox:focus:not(:checked)+label::before {
+    background-color: #959595;
+}

@@ -1,6 +1,6 @@
 import { ReactNode, ReactPortal } from 'react';
 import styles from './Button.module.css';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 interface ButtonProps {
     size: 'small' | 'extraSmall' | 'medium' | 'large' | undefined | null;

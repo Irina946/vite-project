@@ -1,0 +1,7 @@
+.pageChanger {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+}

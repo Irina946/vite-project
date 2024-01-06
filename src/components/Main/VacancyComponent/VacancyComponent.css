@@ -1,0 +1,117 @@
+.vacancy {
+    background: #FFFFFF;
+    width: 100%;
+    max-width: 858px;
+    min-height: 147px;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    text-align: start;
+}
+
+.vacancy-main {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 22px 0 22px 26px;
+}
+
+.vacancy-main__title {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1px;
+    margin-bottom: 6px;
+}
+
+.vacancy-main__title-name {
+    font-weight: 500;
+    font-size: 15px;
+    margin: 0;
+}
+
+.vacancy-main__title-employer {
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.4px;
+    color: rgba(39, 39, 39, 0.4);
+    margin: 0;
+}
+
+.vacancy-main__features {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 7px;
+    margin-bottom:16px;
+}
+
+.vacancy-main__features-item {
+    border: 1px solid #E0E0E0;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    letter-spacing: 0.4px;
+    color: rgba(39, 39, 39, 0.65);
+}
+
+.vacancy-main__location {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.vacancy-main__location-name {
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.4px;
+    color: rgba(39, 39, 39, 0.65);
+}
+
+.vacancy-side {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    margin-right: 33px;
+    gap: 35px;
+}
+
+.vacancy-side__salary {
+    margin-top: 31px;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 28px;
+    white-space: nowrap;
+}
+
+.vacancy-side__respond-btn {
+    font-style: normal;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    background: #242582;
+    border-radius: 12px;
+    border: none;
+    padding: 6px 12px;
+    margin-bottom: 21px;
+    font-weight: 800;
+    font-size: 13px;
+    color: #FFFFFF;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.vacancy-side__respond-btn:focus,
+.vacancy-side__respond-btn:hover {
+    background-color: #1C1D65;
+    color: #FFFFFF;
+}
+
+.vacancy-side__respond-btn:active {
+    background-color: #141549;
+    color: #FFFFFF;
+}
