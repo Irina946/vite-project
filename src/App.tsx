@@ -5,7 +5,7 @@ import { LK } from './components/LK/LK';
 import { Createvacancy } from './components/create_vacancy/create_vacancy';
 import { EditingVacancy } from './components/editing_vacancy/editing_vacancy';
 import { LK_employer } from './components/LK_employer/LK_employer';
-import { Main } from "./components/Main/Main/Main";
+// import { Main } from "./components/Main/Main/Main";
 import {authContext} from "./contexts/AuthContext";
 import {FC, useContext} from "react";
 import Signup from "./SignUp/Signup";
