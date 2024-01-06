@@ -1,0 +1,10 @@
+{
+  "users": [
+    {
+      "email": "student@mail.ru",
+      "password": "$2a$10$jNOckHETKd7V0WBxsJqiPOkls9wmPpRu.7kzz6vzrBYfzKRdqnGGC",
+      "role": "student",
+      "id": 1
+    }
+  ]
+}
