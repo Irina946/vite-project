@@ -6,6 +6,7 @@ import { Createvacancy } from './components/create_vacancy/create_vacancy';
 import { EditingVacancy } from './components/editing_vacancy/editing_vacancy';
 import { LK_employer } from './components/LK_employer/LK_employer';
 import { Main } from "./components/Main/Main/Main";
+import Project from "./components/Project/Project/Project";
 import {authContext} from "./contexts/AuthContext";
 import {FC, useContext} from "react";
 import Signup from "./SignUp/Signup";
@@ -28,7 +29,6 @@ const RequireAuth: FC<Props> = ({allowedRoles}) => {
     );
 }
 
-
 function App() {
 
 
@@ -43,7 +43,7 @@ function App() {
           <Route path='/signup' element={<Signup />}/> {/*Регистрация*/}
           <Route path='/login' element={<Login />}/> {/*Вход*/}
         <Route path='/vacancy' element={<></>} /> {/* мои вакансии*/}
-        <Route path='/project' element={<></>} /> {/*О проекте */}
+        <Route path='/project' element={<Project />} /> {/*О проекте */}
         <Route path='/createVacancy' element={<Createvacancy />} />
         <Route path='/EditingVacancy' element={<EditingVacancy />} />
         <Route path='/lkEmployer' element={<LK_employer />} />
