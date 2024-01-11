@@ -1,7 +1,7 @@
 import VacancyComponent from "../VacancyComponent/VacancyComponent"
 import "./Vacancies-List.css"
 import EmptyResult from "../Empty-Result/Empty-Result.tsx";
-import {Vacancy} from "../../../temp-data/vacancies";
+import {Vacancy} from "../VacancyComponent/VacancyComponent";
 
 interface Props {
     post_vacancies: Vacancy[]

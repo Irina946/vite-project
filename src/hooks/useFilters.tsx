@@ -1,5 +1,5 @@
 import {useMemo} from "react";
-import {Vacancy} from "../temp-data/vacancies";
+import {Vacancy} from "../components/Main/VacancyComponent/VacancyComponent";
 import {FilterType} from "../temp-data/filters";
 
 export const useSearch = (data: Vacancy[], search: string) => {
