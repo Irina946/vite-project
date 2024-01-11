@@ -21,10 +21,14 @@ const Button = (props: ButtonProps) => {
                         props.color === 'emptyRed' ? styles.emptyRed : '';
 
     return (
-        <button className={clsx(styles.myButton, sizeClass, colorClass)}>
+        <button
+            className=
+            {clsx(styles.myButton, sizeClass, colorClass)}
+        >
             {props.title}
         </button>
     );
 }
 
 export default Button;
+
