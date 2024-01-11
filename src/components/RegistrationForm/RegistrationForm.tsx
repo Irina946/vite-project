@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useRef, useState} from "react";
 import axios, {AxiosError} from "axios";
 import {saveToken} from "../../token.ts";
-import {Link, useLocation, useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {authContext} from "../../contexts/AuthContext.tsx"
 import "./RegistrationForm.css"
 
@@ -10,7 +10,6 @@ const PASSWORD_REGEX =/^.*(?=.{6,})[a-zA-Z0-9-].*$/
 
 export default function SignupForm() {
     const navigate = useNavigate();
-    const { state } = useLocation()
     const [userLogin, setUserLogin] = useState('')
     const [validLogin, setValidLogin] = useState(true);
     const [password, setPassword] = useState('')
@@ -50,7 +49,8 @@ export default function SignupForm() {
                 saveToken(register.data.accessToken)
                 localStorage.setItem("id", register.data.user.id);
                 contextAuth?.setAuth({role: register.data.user.role, id:register.data.user.id})
-                navigate(state?.path || "/lk")
+                console.log(contextAuth?.auth.role === 'student' ? '/lk': '/lkEmployer')
+                navigate(contextAuth?.auth.role === 'student' ? '/lk': '/lkEmployer')
             } catch (err) {
                 const thisErr = err as AxiosError
                 if(thisErr?.request?.status === 400) {

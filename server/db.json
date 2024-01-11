@@ -47,6 +47,53 @@
       "district": "Кировский",
       "address": "Мира 19",
       "aboutVacancy": "Аналитик – это фундамент нашей команды. Многие ключевые решения принимаются на основе результатов проведенных аналитиками исследований. Аналитик – это наши руки и скорость. Вы будете искать и анализировать необходимую информацию, готовить красивые презентации, работать в команде с суперпрофи."
+    },
+    {
+      "email": "employer@mail.ru",
+      "password": "$2a$10$J6v5Yn3JSBKKGpG5Ijn6AeoRdGt4H9HuPNKz1xrqH/4/7FvO8arBG",
+      "role": "employer",
+      "id": 4
+    }
+  ],
+  "vacancies": [
+    {
+      "email": "student@mail.ru",
+      "password": "lfnlkne",
+      "id": 1
+    },
+    {
+      "name": "evrve",
+      "level": "",
+      "received": "",
+      "course": "",
+      "work": "",
+      "skills": "",
+      "count": "",
+      "date": "2024-1-11",
+      "payabilityFrom": "",
+      "payabilityTo": "",
+      "city": "",
+      "district": "",
+      "address": "",
+      "aboutVacancy": "",
+      "id": 2
+    },
+    {
+      "name": "evrve",
+      "level": "",
+      "received": "",
+      "course": "",
+      "work": "",
+      "skills": "",
+      "count": "",
+      "date": "2024-1-11",
+      "payabilityFrom": "",
+      "payabilityTo": "",
+      "city": "",
+      "district": "",
+      "address": "",
+      "aboutVacancy": "",
+      "id": 3
     }
   ]
 }

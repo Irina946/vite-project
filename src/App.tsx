@@ -37,7 +37,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Main></Main>} />
-          <Route path='/lk' element={<RequireAuth allowedRoles={["employer"]}/>}>
+          <Route path='/lk' element={<RequireAuth allowedRoles={["student"]}/>}>
               <Route path='/lk' element={<LK_employer />}/>
           </Route>
           <Route path='/signup' element={<Signup />}/> {/*Регистрация*/}
@@ -46,7 +46,9 @@ function App() {
         <Route path='/project' element={<></>} /> {/*О проекте */}
         <Route path='/createVacancy' element={<Createvacancy />} />
         <Route path='/EditingVacancy' element={<EditingVacancy />} />
-        <Route path='/lkEmployer' element={<LK_employer />} />
+          <Route path='/lkEmployer' element={<RequireAuth allowedRoles={["employer"]}/>}>
+            <Route path='/lkEmployer' element={<LK_employer />} />
+          </Route>
         <Route path='/profile' element={<Profile />} />
       </Routes>
     </>

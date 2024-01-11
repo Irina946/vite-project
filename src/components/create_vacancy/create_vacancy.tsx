@@ -50,7 +50,7 @@ export const Createvacancy = () => {
 
     async function submit(e: React.MouseEvent<HTMLButtonElement>) {
         e.preventDefault();
-        await axios.patch(`http://localhost:3001/users/${id}/vacancy`, {
+        await axios.post(`http://localhost:3001/vacancies`, {
             companyName: data?.name, name: vacancyName, level: levelEducation, received: educationReceived, course: course, work: workExperience,
             skills: professionalSkills, count: countPlace, date: formattedToday, payabilityFrom: payabilityFrom, payabilityTo: payabilityTo, city: city,
             district: district, address: address, aboutVacancy: aboutVacancy
