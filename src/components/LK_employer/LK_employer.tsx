@@ -2,22 +2,38 @@ import Button from "../ui-element/Button/Button";
 import styles from "./LK_employer.module.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import VacanciesList from "../Main/Vacancies-List/Vacancies-List";
+
+const getVacancies = async (api: string) => {
+    const response = await axios.get(api);
+    return response.data;
+}
 
 export const LK_employer = () => {
-
-    const [companyName, setCompanyName] = useState('')
+    const id = localStorage.getItem("id");
+    const [companyName, setCompanyName] = useState(``)
     const [companyUserName, setCompanyUserName] = useState('')
     const [companyPhone, setCompanyPhone] = useState('')
     const [companyAbout, setCompanyAbout] = useState('')
     const [companyUrl, setCompanyUrl] = useState('')
-    const id = localStorage.getItem("id");
     async function submit(e: React.MouseEvent<HTMLButtonElement>) {
         e.preventDefault();
         await axios.patch(`http://localhost:3001/users/${id}`, {
             name: companyName, userName: companyUserName, phone: companyPhone, about: companyAbout, url: companyUrl
         })
     }
+
+    const [data, setData] = useState([]);
+    useEffect(() => {
+        const fetchData = async () => {
+            const dataList = await getVacancies('http://localhost:3001/vacancies');
+            setData(dataList)
+        };
+        fetchData();
+    }, [])
+    console.log(data)
+
 
     return (
         <div className={styles.container}>
@@ -88,6 +104,7 @@ export const LK_employer = () => {
                 </div>
                 <div className={styles.block}>
                     <h2>Размещённые вакансии</h2>
+                    <VacanciesList vacancies={data} />
                     <Link to="/createVacancy">
                         <Button
                             color='blue'

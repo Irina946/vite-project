@@ -4,19 +4,26 @@ import axios from "axios";
 
 interface UserData {
     name: string;
+    about: string;
 }
 
 
 export const Createvacancy = () => {
     const today = new Date()
     const yyyy = today.getFullYear();
-    let mm = today.getMonth() + 1;
-    let dd = today.getDate();
+    const mm = today.getMonth() + 1;
+    const dd = today.getDate();
+    let mmS = ''
+    let ddS = ''
 
-    if (dd < 10) dd = 0 + dd;
-    if (mm < 10) mm = 0 + mm;
+    if (dd < 10) {
+        ddS = '0' + String(dd)
+    } else ddS = String(dd);
+    if (mm < 10) {
+        mmS = '0' + mm
+    } else mmS = String(dd);
 
-    const formattedToday = yyyy + '-' + mm + '-' + dd;
+    const formattedToday = yyyy + '-' + mmS + '-' + ddS;
 
     const [vacancyName, setVacancyName] = useState('')
     const [levelEducation, setLevelEducation] = useState('')
@@ -50,10 +57,10 @@ export const Createvacancy = () => {
 
     async function submit(e: React.MouseEvent<HTMLButtonElement>) {
         e.preventDefault();
-        await axios.patch(`http://localhost:3001/users/${id}/vacancy`, {
+        await axios.post(`http://localhost:3001/vacancies`, {
             companyName: data?.name, name: vacancyName, level: levelEducation, received: educationReceived, course: course, work: workExperience,
             skills: professionalSkills, count: countPlace, date: formattedToday, payabilityFrom: payabilityFrom, payabilityTo: payabilityTo, city: city,
-            district: district, address: address, aboutVacancy: aboutVacancy
+            district: district, address: address, aboutVacancy: aboutVacancy, aboutCompany: data?.about
         })
     }
 
