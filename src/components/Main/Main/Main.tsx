@@ -21,15 +21,15 @@ export const Main = () => {
                 setData(jsonData.map(vacancy => ({
                         id: vacancy.id,
                         title: vacancy.name,
-                        employer: vacancy.companyName,
+                        employer: vacancy.companyName ? vacancy.companyName : '',
                         features: [
-                            vacancy.level === 'Не важно' ? 'Без опыта' : vacancy.level,
-                            vacancy.work === 'Нет' ? 'Стажировка' : 'Официальное трудоустройство'
+                            vacancy.level === 'Не важно' || !vacancy.level ? 'Без опыта' : vacancy.level,
+                            vacancy.work === 'Нет' || !vacancy.level ? 'Стажировка' : 'Официальное трудоустройство'
                         ],
-                        location: vacancy.city,
-                        address: vacancy.address,
-                        salaryFrom: vacancy.payabilityFrom,
-                        salaryTo: vacancy.payabilityTo,
+                        location: vacancy.city ? vacancy.city : '',
+                        address: vacancy.address ? vacancy.address : '',
+                        salaryFrom: vacancy.payabilityFrom ? vacancy.payabilityFrom : '',
+                        salaryTo: vacancy.payabilityTo ? vacancy.payabilityTo : '',
                         link: ''
                     })))
             };

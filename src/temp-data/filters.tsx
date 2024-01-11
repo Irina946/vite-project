@@ -17,12 +17,9 @@ const filterTypes: FilterType[] = [{
     value: 'salary',
     modalTitle: 'Выбор диапазона зарплат',
     filteredVacancies: (vacancies,  restriction) => vacancies.filter(vacancy => {
-        console.log(vacancy.salaryFrom, vacancy.salaryTo, restriction[1], restriction[0])
-        console.log(parseInt(vacancy.salaryFrom) <= parseInt(restriction[1]))
-        console.log(parseInt(vacancy.salaryTo) >= parseInt(restriction[0]))
         return restriction.length !== 0 ?
-                parseInt(vacancy.salaryFrom) <= parseInt(restriction[1]) &&
-                parseInt(vacancy.salaryTo) >= parseInt(restriction[0]) : true
+                parseInt(vacancy.salaryFrom ? vacancy.salaryFrom : '0') <= parseInt(restriction[1]) &&
+                parseInt(vacancy.salaryTo ? vacancy.salaryTo : '10000000000000000') >= parseInt(restriction[0]) : true
         }
     ),
     filterVariants: (vacancies) => vacancies.map(vacancy => vacancy.salaryTo)
