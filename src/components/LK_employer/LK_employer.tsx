@@ -1,8 +1,24 @@
 import Button from "../ui-element/Button/Button";
 import styles from "./LK_employer.module.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useState } from "react";
 
 export const LK_employer = () => {
+
+    const [companyName, setCompanyName] = useState('')
+    const [companyUserName, setCompanyUserName] = useState('')
+    const [companyPhone, setCompanyPhone] = useState('')
+    const [companyAbout, setCompanyAbout] = useState('')
+    const [companyUrl, setCompanyUrl] = useState('')
+    const id = localStorage.getItem("id");
+    async function submit(e: React.MouseEvent<HTMLButtonElement>) {
+        e.preventDefault();
+        await axios.patch(`http://localhost:3001/users/${id}`, {
+            name: companyName, userName: companyUserName, phone: companyPhone, about: companyAbout, url: companyUrl
+        })
+    }
+
     return (
         <div className={styles.container}>
             <h1>Проофиль компании</h1>
@@ -10,28 +26,68 @@ export const LK_employer = () => {
                 <div className={styles.block}>
                     <label className={styles.label}>
                         Название компании
-                        <input className={styles.myInput} required />
+                        <input
+                            className={styles.myInput}
+                            required
+                            value={companyName}
+                            onChange={
+                                (e) =>
+                                    setCompanyName(e.target.value)
+                            }
+                        />
                     </label>
                     <label className={styles.label}>
                         ФИО представителя
-                        <input className={styles.myInput} required />
+                        <input
+                            className={styles.myInput}
+                            required
+                            value={companyUserName}
+                            onChange={
+                                (e) =>
+                                    setCompanyUserName(e.target.value)
+                            }
+                        />
                     </label>
                     <label className={styles.label}>
                         Номер телефона
-                        <input className={styles.myInput} type="tel" />
+                        <input
+                            className={styles.myInput}
+                            type="tel"
+                            value={companyPhone}
+                            onChange={
+                                (e) =>
+                                    setCompanyPhone(e.target.value)
+                            }
+                        />
                     </label>
                 </div>
                 <div className={styles.block}>
                     <p>Расскажите о компании</p>
-                    <textarea className={styles.textArea} />
+                    <textarea
+                        className={styles.textArea}
+                        value={companyAbout}
+                        onChange={
+                            (e) =>
+                                setCompanyAbout(e.target.value)
+                        }
+                    />
                 </div>
                 <div className={styles.block}>
                     <label className={styles.label}>
-                        Ссылка на сай компании
-                        <input className={styles.myInput} type="url" required />
+                        Ссылка на сайт компании
+                        <input
+                            className={styles.myInput}
+                            type="url"
+                            required
+                            value={companyUrl}
+                            onChange={
+                                (e) =>
+                                    setCompanyUrl(e.target.value)
+                            } />
                     </label>
                 </div>
                 <div className={styles.block}>
+                    <h2>Размещённые вакансии</h2>
                     <Link to="/createVacancy">
                         <Button
                             color='blue'
@@ -47,11 +103,12 @@ export const LK_employer = () => {
                         size='large'
                     />
                     <div className={styles.containerBtnInside}>
-                        <Button
-                            title='Сохранить изменения'
-                            color='violet'
-                            size='large'
-                        />
+                        <button
+                            className={styles.ButtonSave}
+                            onClick={(e: React.MouseEvent<HTMLButtonElement>) => submit(e)}
+                        >
+                            Сохранить изменения
+                        </button>
                         <Link to="/vacancy">
                             <Button
                                 title='Перейти к поиску сотрудника'

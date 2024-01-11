@@ -1,0 +1,64 @@
+.profile {
+    padding: 120px 70px;
+}
+
+.imgUser {
+    width: 205px;
+    height: 266px;
+    border-radius: 16px;
+    margin-right: 20px;
+}
+
+.basicInformationContainer {
+    display: flex;
+    margin-top: 46px;
+    margin-bottom: 54px;
+    color: #272727A6;
+}
+
+.name {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 32px;
+    margin-bottom: 33px;
+    margin-top: 32px;
+    color: #000000;
+}
+
+.info1>p,
+.info2>p {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.info1 {
+    margin-bottom: 23px;
+}
+
+.describe {
+    margin-bottom: 65px;
+}
+
+.header {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 28px;
+    color: #242582;
+    border-bottom: 1px solid #242582;
+    width: 100%;
+}
+
+.post {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 24px;
+}
+
+.linkPartfolio {
+    color: #242582;
+    text-decoration: none;
+}

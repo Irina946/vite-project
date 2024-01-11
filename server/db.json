@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "email": "student@mail.ru",
+      "password": "$2a$10$jNOckHETKd7V0WBxsJqiPOkls9wmPpRu.7kzz6vzrBYfzKRdqnGGC",
+      "role": "student",
+      "id": 1
+    },
+    {
+      "email": "stydent@mail.com",
+      "password": "$2a$10$Fqu24pSwGzip1mOFBw9fAu9fvMrplDu.YYmKjn4huAKKgg4zrqILe",
+      "role": "student",
+      "id": 2,
+      "name": "vbvbvbvb",
+      "lastName": "",
+      "fatherName": "",
+      "sex": "",
+      "date": "",
+      "city": "",
+      "phone": "",
+      "levelEducation": "",
+      "education": "",
+      "status": "",
+      "courese": "",
+      "post": "",
+      "workExperience": "",
+      "url": "",
+      "direction": "on",
+      "aboutMe": ""
+    },
+    {
+      "email": "Director@email.com",
+      "password": "$2a$10$cRrh6VHLAAFHwlU6u/ubm.RDUtgUFdqkSw6A3/fhyC8JpDTu8aZSS",
+      "role": "employer",
+      "id": 3,
+      "name": "Аналитик",
+      "level": "Школа",
+      "received": "Институт",
+      "course": "3",
+      "work": "Нет опыта",
+      "skills": "Высшее экономическое или техническое образование (выпускники или студенты 2 курса магистратуры)\nОтличные навыки работы с компьютером (Word, Excel, Power Point).\nСвободное владение английским языком (профессиональная лексика и терминология)\nУмение свободно и грамотно излагать свои мысли как письменно, так и устно\nЗнания и понимание экономики предприятия и основных показателей эффективности\nЗнания в области стратегического анализа, систем управления, корпоративных финансов и финансового моделирования приветствуются.",
+      "count": "5",
+      "date": "",
+      "payabilityFrom": "200",
+      "payabilityTo": "500",
+      "city": "Екатеринбург",
+      "district": "Кировский",
+      "address": "Мира 19",
+      "aboutVacancy": "Аналитик – это фундамент нашей команды. Многие ключевые решения принимаются на основе результатов проведенных аналитиками исследований. Аналитик – это наши руки и скорость. Вы будете искать и анализировать необходимую информацию, готовить красивые презентации, работать в команде с суперпрофи."
+    }
+  ]
+}
