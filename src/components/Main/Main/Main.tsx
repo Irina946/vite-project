@@ -11,6 +11,27 @@ import FilterModal from "../Filter-Modal/Filter-Modal.tsx";
 import SearchFilters from "../Search-Filter/Search-Filters.tsx";
 import VacanciesList from "../Vacancies-List/Vacancies-List.tsx";
 
+type TVacancy = {
+    id: number;
+    name: string;
+    companyName: string,
+    level: string,
+    received: string,
+    course: string,
+    work: string,
+    skills: string,
+    count: string,
+    date: string,
+    payabilityFrom: string,
+    payabilityTo: string,
+    city: string,
+    district: string,
+    address: string,
+    aboutVacancy: string,
+    aboutCompany: string,
+}
+
+
 export const Main = () => {
     const [data, setData] = useState<Vacancy[]>([]);
     const apiUrl = `http://localhost:3001/vacancies/`;
@@ -18,7 +39,7 @@ export const Main = () => {
             const fetchData = async () => {
                 const response = await fetch(apiUrl);
                 const jsonData = await response.json();
-                setData(jsonData.map(vacancy => ({
+                setData(jsonData.map((vacancy: TVacancy) => ({
                         id: vacancy.id,
                         title: vacancy.name,
                         employer: vacancy.companyName ? vacancy.companyName : '',

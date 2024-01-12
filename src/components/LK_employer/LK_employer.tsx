@@ -4,19 +4,53 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import VacanciesList from "../Main/Vacancies-List/Vacancies-List";
+import { Vacancy } from "../Main/VacancyComponent/VacancyComponent";
 
-const getVacancies = async (api: string) => {
-    const response = await axios.get(api);
-    return response.data;
+type TVacancy = {
+    id: number;
+    name: string;
+    companyName: string,
+    level: string,
+    received: string,
+    course: string,
+    work: string,
+    skills: string,
+    count: string,
+    date: string,
+    payabilityFrom: string,
+    payabilityTo: string,
+    city: string,
+    district: string,
+    address: string,
+    aboutVacancy: string,
+    aboutCompany: string,
 }
 
 export const LK_employer = () => {
-    const id = localStorage.getItem("id");
     const [companyName, setCompanyName] = useState(``)
     const [companyUserName, setCompanyUserName] = useState('')
     const [companyPhone, setCompanyPhone] = useState('')
     const [companyAbout, setCompanyAbout] = useState('')
     const [companyUrl, setCompanyUrl] = useState('')
+    const id = localStorage.getItem("id");
+    const apiUrl = `http://localhost:3001/users/${id}`;
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await fetch(apiUrl);
+            const jsonData = await response.json();
+            setCompanyName(jsonData?.name ?? '');
+            setCompanyUserName(jsonData?.userName ?? '');
+            setCompanyPhone(jsonData?.phone ?? '');
+            setCompanyAbout(jsonData?.about ?? '');
+            setCompanyUrl(jsonData?.url ?? '');
+        };
+
+        fetchData();
+
+    }, [apiUrl]);
+
+
+
     async function submit(e: React.MouseEvent<HTMLButtonElement>) {
         e.preventDefault();
         await axios.patch(`http://localhost:3001/users/${id}`, {
@@ -24,15 +58,30 @@ export const LK_employer = () => {
         })
     }
 
-    const [data, setData] = useState([]);
+    const [data, setData] = useState<Vacancy[]>([]);
+    const api = 'http://localhost:3001/vacancies/'
     useEffect(() => {
         const fetchData = async () => {
-            const dataList = await getVacancies('http://localhost:3001/vacancies');
-            setData(dataList)
+            const response = await fetch(api);
+            const jsonData = await response.json();
+            setData(jsonData.map((vacancy: TVacancy) => (
+                {
+                    id: vacancy.id,
+                    title: vacancy.name,
+                    employer: vacancy.companyName ? vacancy.companyName : '',
+                    features: [
+                        vacancy.level === 'Не важно' || !vacancy.level ? 'Без опыта' : vacancy.level,
+                        vacancy.work === 'Нет' || !vacancy.level ? 'Стажировка' : 'Официальное трудоустройство'
+                    ],
+                    location: vacancy.city ? vacancy.city : '',
+                    address: vacancy.address ? vacancy.address : '',
+                    salaryFrom: vacancy.payabilityFrom ? vacancy.payabilityFrom : '',
+                    salaryTo: vacancy.payabilityTo ? vacancy.payabilityTo : '',
+                    link: ''
+                })))
         };
         fetchData();
-    }, [])
-    console.log(data)
+    }, [api])
 
 
     return (
@@ -104,36 +153,33 @@ export const LK_employer = () => {
                 </div>
                 <div className={styles.block}>
                     <h2>Размещённые вакансии</h2>
-                    <VacanciesList vacancies={data} />
-                    <Link to="/createVacancy">
-                        <Button
-                            color='blue'
-                            size='large'
-                            title='Добавить вакансию' />
-                    </Link>
+                    <VacanciesList post_vacancies={data?.filter((vacancy: Vacancy) => vacancy.employer === companyName)} />
+                    <div className={styles.paddings}>
+                        <Link to="/createVacancy" >
+                            <Button
+                                color='blue'
+                                size='large'
+                                title='Добавить вакансию' />
+                        </Link>
+                    </div>
                 </div>
 
                 <div className={styles.ContainerBtn1}>
-                    <Button
-                        title='Посмотреть публичный профиль компании'
-                        color="blue"
-                        size='large'
-                    />
-                    <div className={styles.containerBtnInside}>
-                        <button
-                            className={styles.ButtonSave}
-                            onClick={(e: React.MouseEvent<HTMLButtonElement>) => submit(e)}
-                        >
-                            Сохранить изменения
-                        </button>
-                        <Link to="/vacancy">
-                            <Button
-                                title='Перейти к поиску сотрудника'
-                                color="blue"
-                                size='large'
-                            />
-                        </Link>
-                    </div>
+
+                    <button
+                        className={styles.ButtonSave}
+                        onClick={(e: React.MouseEvent<HTMLButtonElement>) => submit(e)}
+                    >
+                        Сохранить изменения
+                    </button>
+                    <Link to="/vacancy">
+                        <Button
+                            title='Перейти к поиску сотрудника'
+                            color="blue"
+                            size='large'
+                        />
+                    </Link>
+
                 </div>
                 <div className={styles.ContainerBtn2}>
                     <Button

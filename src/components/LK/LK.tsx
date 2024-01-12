@@ -2,7 +2,7 @@ import Button from "../ui-element/Button/Button";
 import styles from "./lk.module.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const LK = () => {
     const id = localStorage.getItem("id");
@@ -22,6 +22,31 @@ export const LK = () => {
     const [userWorkExperience, setUserWorkExperience] = useState('')
     const [userUrl, setUserUrl] = useState('')
     const [userAboutMe, setUserAboutMe] = useState('')
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await fetch(apiUrl);
+            const jsonData = await response.json();
+            setUserName(jsonData?.name ?? '');
+            setUserLastName(jsonData?.lastName ?? '');
+            setUserFatherName(jsonData?.fatherName ?? '');
+            setUserSex(jsonData?.sex ?? '');
+            setUserDate(jsonData?.date ?? '');
+            setUserCity(jsonData?.city ?? '');
+            setUserPhone(jsonData?.phone ?? '');
+            setUserLevelEducation(jsonData?.levelEducation ?? '');
+            setUserEducation(jsonData?.education ?? '');
+            setUserStatus(jsonData?.status ?? '');
+            setUserCourse(jsonData?.courese ?? '');
+            setUserPost(jsonData?.post ?? '');
+            setUserWorkExperience(jsonData?.workExperience ?? '');
+            setUserUrl(jsonData?.aboutMe ?? '');
+            setUserAboutMe(jsonData?.url ?? '');
+        };
+        
+        fetchData();
+        
+    }, [apiUrl]);
 
     async function submit(e: React.MouseEvent<HTMLButtonElement>) {
         e.preventDefault();
