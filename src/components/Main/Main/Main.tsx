@@ -1,8 +1,7 @@
-import vacancies from "../../../temp-data/vacancies.tsx";
 import filterTypes from "../../../temp-data/filters";
-import {Vacancy} from "../../../temp-data/vacancies.tsx";
 import {useState, useEffect} from 'react';
 import { useFilters } from "../../../hooks/useFilters";
+import {Vacancy} from "../VacancyComponent/VacancyComponent";
 import './Main.css'
 import ReactPaginate from "react-paginate";
 import Search from '../../ui-element/Search/Search.tsx'
@@ -13,7 +12,32 @@ import SearchFilters from "../Search-Filter/Search-Filters.tsx";
 import VacanciesList from "../Vacancies-List/Vacancies-List.tsx";
 
 export const Main = () => {
-    const post_vacancies = vacancies
+    const [data, setData] = useState<Vacancy[]>([]);
+    const apiUrl = `http://localhost:3001/vacancies/`;
+    useEffect(() => {
+            const fetchData = async () => {
+                const response = await fetch(apiUrl);
+                const jsonData = await response.json();
+                setData(jsonData.map(vacancy => ({
+                        id: vacancy.id,
+                        title: vacancy.name,
+                        employer: vacancy.companyName ? vacancy.companyName : '',
+                        features: [
+                            vacancy.level === 'Не важно' || !vacancy.level ? 'Без опыта' : vacancy.level,
+                            vacancy.work === 'Нет' || !vacancy.level ? 'Стажировка' : 'Официальное трудоустройство'
+                        ],
+                        location: vacancy.city ? vacancy.city : '',
+                        address: vacancy.address ? vacancy.address : '',
+                        salaryFrom: vacancy.payabilityFrom ? vacancy.payabilityFrom : '',
+                        salaryTo: vacancy.payabilityTo ? vacancy.payabilityTo : '',
+                        link: ''
+                    })))
+            };
+            fetchData();
+        },
+        [apiUrl]);
+
+    const post_vacancies = data
     const filters = filterTypes
 
     const [searchInput, setSearchInput] = useState('')

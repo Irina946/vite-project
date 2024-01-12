@@ -1,8 +1,7 @@
 import {useState} from 'react';
 import './Filter-Modal.css'
 import Checkbox from "../../ui-element/Checkbox/Checkbox";
-import RadioButton from "../../ui-element/Radio/Radio";
-import {Vacancy} from "../../../temp-data/vacancies";
+import {Vacancy} from "../VacancyComponent/VacancyComponent";
 import {FilterType} from "../../../temp-data/filters";
 import * as React from "react";
 
