@@ -3,7 +3,6 @@ import './Filter-Modal.css'
 import Checkbox from "../../ui-element/Checkbox/Checkbox";
 import {Vacancy} from "../VacancyComponent/VacancyComponent";
 import {FilterType} from "../../../temp-data/filters";
-import * as React from "react";
 
 interface Props {
     filter: FilterType;

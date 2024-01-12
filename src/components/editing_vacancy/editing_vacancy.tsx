@@ -151,7 +151,6 @@ export const EditingVacancy = () => {
                             className={styles.myInput}
                             type='number'
                             min='1'
-                            required
                             value={countPlace}
                             onChange={
                                 (e) =>
@@ -217,7 +216,6 @@ export const EditingVacancy = () => {
                         Район
                         <input
                             className={styles.myInput}
-                            required
                             value={district}
                             onChange={
                                 (e) =>

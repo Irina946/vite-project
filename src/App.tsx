@@ -40,10 +40,10 @@ function App() {
           <Route path='/lk' element={<RequireAuth allowedRoles={["student"]}/>}>
               <Route path='/lk' element={<LK/>}/>
           </Route>
-          <Route path='/signup' element={<Signup />}/> {/*Регистрация*/}
-          <Route path='/login' element={<Login />}/> {/*Вход*/}
-        <Route path='/vacancy' element={<></>} /> {/* мои вакансии*/}
-        <Route path='/project' element={<Project />} /> {/*О проекте */}
+          <Route path='/signup' element={<Signup />}/> 
+          <Route path='/login' element={<Login />}/> 
+        <Route path='/vacancy' element={<></>} /> 
+        <Route path='/project' element={<Project />} /> 
         <Route path='/createVacancy' element={<Createvacancy />} />
         <Route path='/EditingVacancy' element={<EditingVacancy />} />
           <Route path='/lkEmployer' element={<RequireAuth allowedRoles={["employer"]}/>}>

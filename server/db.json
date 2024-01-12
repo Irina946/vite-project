@@ -29,6 +29,38 @@
       "password": "$2a$10$0nS2AWQVP8o3PqWGQ7cDx..CSurVoxQOPAGhf7Nvu3D61TSq9AKwa",
       "role": "employer",
       "id": 5
+    },
+    {
+      "email": "Director@email.com",
+      "password": "$2a$10$a02v5gnDc8jsLlxn1NA2cOtQcNgtWMAtvVMJ7DJSNgJHBi5rC1BTO",
+      "role": "employer",
+      "id": 6,
+      "name": "Атлас",
+      "userName": "Иванов Иван Иванович",
+      "phone": "89009009090",
+      "about": "Наша компания специализируется на профессиональной разработке программного обеспечения и информационных систем.\nБлагодаря обширному опыту, накопленному за многие годы работы, мы готовы предложить\nдля Вас весь спектр услуг в области разработки, развития и поддержки Вашего проекта.\nПри необходимости, мы поможем Вам сформировать цели проекта и формализовать механизм\nобеспечения окупаемости, спроектируем архитектуру системы, разработаем техническое задание.",
+      "url": "https://www.figma.com/file/Nim3BdGtvZrlybJn2jbahb/%D0%A1%D0%B0%D0%B9%D1%82-%D0%B4%D0%BB%D1%8F-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B0%D0%BD%D1%82%D0%BE%D0%B2-%D1%80%D0%B5%D0%B0%D0%BA%D1%82?type=design&node-id=1230-1673&mode=design&t=4o4BpCPQb1Vyqv01-0"
+    },
+    {
+      "email": "Stydent@mail.com",
+      "password": "$2a$10$/sUp8XSTstRdlbZv.F3laOv3GirXVzaCVdxotqEmz889P5cJoTHmG",
+      "role": "student",
+      "id": 7,
+      "name": "Иван ",
+      "lastName": "Иванов",
+      "fatherName": "Иванович",
+      "sex": "Мужской",
+      "date": "2005-12-02",
+      "city": "Екатеринбург",
+      "phone": "8800909090",
+      "levelEducation": "средняя школа №104",
+      "education": "УрФУ, ИРИТ-РТФ, Программная инженерия",
+      "status": "Студент",
+      "courese": "2",
+      "post": "Разработка, Backend",
+      "workExperience": "Нет",
+      "url": "https://www.figma.com/file/Nim3BdGtvZrlybJn2jbahb/%D0%A1%D0%B0%D0%B9%D1%82-%D0%B4%D0%BB%D1%8F-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B0%D0%BD%D1%82%D0%BE%D0%B2-%D1%80%D0%B5%D0%B0%D0%BA%D1%82?type=design&node-id=1230-1732&mode=design&t=4o4BpCPQb1Vyqv01-0",
+      "aboutMe": "Я открыт для новых вызовов и готов учиться чему-то новому.\nЯ также имею {ваш уровень образования} в области {ваша специализация}, что позволяет мне быстро адаптироваться к новым задачам\nи справляться с ними эффективно. Буду рад обсудить возможность работы с вашей компанией и ответить на все ваши вопросы на собеседовании."
     }
   ],
   "vacancies": [

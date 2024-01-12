@@ -36,7 +36,6 @@ export default function SignupForm() {
                 localStorage.setItem("id", register.data.user.id);
                 contextAuth?.setAuth({role: register.data.user.role, id:register.data.user.id})
                 navigate(register.data.user.role === 'student' ? '/lk': '/lkEmployer')
-                // navigate(contextAuth?.auth.role === 'student' ? '/lk': '/lkEmployer')
             } catch (err) {
                 const thisErr = err as AxiosError
                 if(thisErr?.request?.status === 400) {

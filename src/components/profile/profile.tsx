@@ -7,7 +7,7 @@ interface UserData {
     name: string;
     fatherName: string;
     sex: string;
-    date: string; // ISO date format
+    date: string;
     city: string;
     levelEducation: string;
     education: string;
@@ -107,16 +107,8 @@ function BasicInformation() {
     );
 }
 
-// function DirectionObjective() {
-//     return (<div className={styles.describe}>
-//         <p className={styles.header}>Желаемое направление</p>
-//         <p>Разработка, Backend</p>
-//     </div>)
-// }
-
 function Profile() {
     return (<><BasicInformation />
-        {/* <DirectionObjective /> */}
     </>)
 }
 

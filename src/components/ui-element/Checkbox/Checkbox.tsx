@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import styles from "./checkbox.module.css";
 import clsx from "clsx";
 import * as React from "react";
