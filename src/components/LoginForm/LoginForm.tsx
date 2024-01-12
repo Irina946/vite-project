@@ -21,7 +21,7 @@ export default function LoginForm() {
             const log = await axios.post(apiUrl, {email: userlogin, password: password})
             saveToken(log.data.accessToken)
             localStorage.setItem("id", log.data.user.id);
-            contextAuth?.setAuth({role: log.data.user.role, id:log.data.user.id})
+            await contextAuth?.setAuth({role: log.data.user.role, id:log.data.user.id})
             console.log(contextAuth?.auth.role)
             console.log(contextAuth?.auth.role === 'student' ? '/lk': '/lkEmployer')
             navigate(contextAuth?.auth.role === 'student' ? '/lk': '/lkEmployer')

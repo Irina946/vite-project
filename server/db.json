@@ -2,53 +2,15 @@
   "users": [
     {
       "email": "student@mail.ru",
-      "password": "$2a$10$jNOckHETKd7V0WBxsJqiPOkls9wmPpRu.7kzz6vzrBYfzKRdqnGGC",
+      "password": "$2a$10$UVpbf0rrAEV/.lpsGrZOzeEeWRwIK.1xy9je2is8ffUrp0j/yhTUy",
       "role": "student",
       "id": 1
     },
     {
-      "email": "stydent@mail.com",
-      "password": "$2a$10$Fqu24pSwGzip1mOFBw9fAu9fvMrplDu.YYmKjn4huAKKgg4zrqILe",
-      "role": "student",
-      "id": 2,
-      "name": "vbvbvbvb",
-      "lastName": "",
-      "fatherName": "",
-      "sex": "",
-      "date": "",
-      "city": "",
-      "phone": "",
-      "levelEducation": "",
-      "education": "",
-      "status": "",
-      "courese": "",
-      "post": "",
-      "workExperience": "",
-      "url": "",
-      "direction": "on",
-      "aboutMe": ""
-    },
-    {
-      "email": "Director@email.com",
-      "password": "$2a$10$cRrh6VHLAAFHwlU6u/ubm.RDUtgUFdqkSw6A3/fhyC8JpDTu8aZSS",
+      "email": "employer@mail.ru",
+      "password": "$2a$10$PXoEO3MCryWNwcxnaWnJO.DuskB3MrS3xaroQ6RE3r/wplOFeAcSK",
       "role": "employer",
-      "id": 3,
-      "name": "Атлас",
-      "userName": "Иванов Иван Иванович",
-      "phone": "89009009090",
-      "about": "Наша компания специализируется на профессиональной разработке программного обеспечения и информационных систем.\nБлагодаря обширному опыту, накопленному за многие годы работы, мы готовы предложить\nдля Вас весь спектр услуг в области разработки, развития и поддержки Вашего проекта.\nПри необходимости, мы поможем Вам сформировать цели проекта и формализовать механизм\nобеспечения окупаемости, спроектируем архитектуру системы, разработаем техническое задание.",
-      "url": "https://www.figma.com/file/Nim3BdGtvZrlybJn2jbahb/%D0%A1%D0%B0%D0%B9%D1%82-%D0%B4%D0%BB%D1%8F-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B0%D0%BD%D1%82%D0%BE%D0%B2-%D1%80%D0%B5%D0%B0%D0%BA%D1%82?type=design&node-id=180-220&mode=design&t=ItppEOg2YRxE4w4W-0"
-    },
-    {
-      "email": "alisapkpb@gmail.com",
-      "password": "$2a$10$NkLgZPyzGYfmqblJmpos3eC0SqVQlzgyjUEThcjkzjqkxZTgL3kGe",
-      "role": "employer",
-      "id": 4,
-      "name": "HolyCompany",
-      "userName": "Программистов Иван Иванович",
-      "phone": "",
-      "about": "",
-      "url": "vk.com"
+      "id": 2
     }
   ],
   "vacancies": [
