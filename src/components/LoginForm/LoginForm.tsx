@@ -1,14 +1,13 @@
 import React, {useContext, useState} from "react";
 import axios, {AxiosError} from "axios";
 import {saveToken} from "../../token.js";
-import {Link, useLocation, useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import "./LoginForm.css"
 import {authContext} from "../../contexts/AuthContext";
 
 
 export default function LoginForm() {
     const navigate = useNavigate();
-    const { state } = useLocation()
     const [userlogin, setUserlogin] = useState('')
     const [password, setPassword] = useState('')
     const contextAuth = useContext(authContext)
@@ -23,7 +22,9 @@ export default function LoginForm() {
             saveToken(log.data.accessToken)
             localStorage.setItem("id", log.data.user.id);
             contextAuth?.setAuth({role: log.data.user.role, id:log.data.user.id})
-            navigate(state?.path || "/lk")
+            console.log(contextAuth?.auth.role)
+            console.log(contextAuth?.auth.role === 'student' ? '/lk': '/lkEmployer')
+            navigate(contextAuth?.auth.role === 'student' ? '/lk': '/lkEmployer')
         }
         catch (err) {
             const thisErr = err as AxiosError

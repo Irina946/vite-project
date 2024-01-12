@@ -1,7 +1,7 @@
 import './App.css'
 import {Navigate, Outlet, Route, Routes, useLocation} from "react-router-dom";
 import { Navbar } from './components/ui-element/Navbar/Navbar';
-// import { LK } from './components/LK/LK';
+import { LK } from './components/LK/LK';
 import { Createvacancy } from './components/create_vacancy/create_vacancy';
 import { EditingVacancy } from './components/editing_vacancy/editing_vacancy';
 import { LK_employer } from './components/LK_employer/LK_employer';
@@ -37,8 +37,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Main></Main>} />
-          <Route path='/lk' element={<RequireAuth allowedRoles={["employer"]}/>}>
-              <Route path='/lk' element={<LK_employer />}/>
+          <Route path='/lk' element={<RequireAuth allowedRoles={["student"]}/>}>
+              <Route path='/lk' element={<LK/>}/>
           </Route>
           <Route path='/signup' element={<Signup />}/> {/*Регистрация*/}
           <Route path='/login' element={<Login />}/> {/*Вход*/}
@@ -46,7 +46,9 @@ function App() {
         <Route path='/project' element={<Project />} /> {/*О проекте */}
         <Route path='/createVacancy' element={<Createvacancy />} />
         <Route path='/EditingVacancy' element={<EditingVacancy />} />
-        <Route path='/lkEmployer' element={<LK_employer />} />
+          <Route path='/lkEmployer' element={<RequireAuth allowedRoles={["employer"]}/>}>
+            <Route path='/lkEmployer' element={<LK_employer />} />
+          </Route>
         <Route path='/profile' element={<Profile />} />
       </Routes>
     </>

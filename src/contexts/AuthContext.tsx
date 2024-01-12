@@ -22,7 +22,7 @@ export const authContext = createContext<AuthContextType| null>(null);
 // }
 
 const AuthProvider: FC<Props> = ({children}) => {
-    const [auth, setAuth] = useState<AuthType>({role: 'guest'});
+    const [auth, setAuth] = useState<AuthType>({role: 'guest', id:''});
     return <authContext.Provider value={{auth, setAuth}}>{children}</authContext.Provider>
 }
 
