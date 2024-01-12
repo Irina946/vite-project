@@ -63,6 +63,7 @@ function BasicInformation() {
     if (!data) {
         return <div>Loading...</div>;
     }
+    
 
     return (
         <div className={styles.profile}>
