@@ -13,13 +13,11 @@ form{
     padding: 40px;
 }
 .signupForm .error-text{
-    display: none;
-}
-
-.signupForm .error p {
-    display: flex;
+    display: block;
     color: #F64C72;
 }
+
+
 .submit-error{
     display: flex;
     color: #F64C72;
