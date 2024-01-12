@@ -11,6 +11,24 @@
       "password": "$2a$10$PXoEO3MCryWNwcxnaWnJO.DuskB3MrS3xaroQ6RE3r/wplOFeAcSK",
       "role": "employer",
       "id": 2
+    },
+    {
+      "email": "test@mail.ru",
+      "password": "$2a$10$6.IZDnX0xPFrJLWbSaCIsu7IkYkkU3HcQXu3qrQ7yBTxUqMXcDP4C",
+      "role": "student",
+      "id": 3
+    },
+    {
+      "email": "testtest@mail.ru",
+      "password": "$2a$10$oT.lMTCXyGOS1e5Na3fcdeK3k9oOqH5Fi6tNTj76WBI0pG.ueGs5K",
+      "role": "student",
+      "id": 4
+    },
+    {
+      "email": "teste@mail.ru",
+      "password": "$2a$10$0nS2AWQVP8o3PqWGQ7cDx..CSurVoxQOPAGhf7Nvu3D61TSq9AKwa",
+      "role": "employer",
+      "id": 5
     }
   ],
   "vacancies": [
